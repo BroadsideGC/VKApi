@@ -1,5 +1,5 @@
-import VKApi.model.Button
-import VKApi.model.Photo
+package VKApi.model.media
+
 import com.fasterxml.jackson.annotation.JsonProperty
 
 

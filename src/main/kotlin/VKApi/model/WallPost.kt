@@ -1,4 +1,4 @@
-import VKApi.model.Attachement
+import VKApi.model.media.Attachment
 import com.fasterxml.jackson.annotation.JsonProperty
 
 
@@ -19,7 +19,7 @@ data class WallPost(@JsonProperty("id") val id: Int,
                     @JsonProperty("views") val views: Views,
                     @JsonProperty("post_type") val postType: PostType,
                     @JsonProperty("post_source") val postSource: PostSource? = null,
-                    @JsonProperty("attachements") val attachments: List<Attachement>,
+                    @JsonProperty("attachements") val attachments: List<Attachment>,
                     @JsonProperty("geo") val geo: Geo,
                     @JsonProperty("signer_id") val signerId: Int,
                     @JsonProperty("copy_history") val copyHistory: List<WallPost>? = null,

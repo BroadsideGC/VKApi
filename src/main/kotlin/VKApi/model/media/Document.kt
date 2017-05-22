@@ -1,4 +1,4 @@
-package VKApi.model
+package VKApi.model.media
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
