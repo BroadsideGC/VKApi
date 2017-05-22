@@ -1,6 +1,5 @@
+import VKApi.model.Attachement
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.sun.xml.internal.ws.api.message.Attachment
-import javafx.scene.web.WebHistory
 
 
 /**
@@ -13,22 +12,22 @@ data class WallPost(@JsonProperty("id") val id: Int,
                     @JsonProperty("text") val text: String,
                     @JsonProperty("reply_owner_id") val replyOwnerId: Int,
                     @JsonProperty("reply_post_id") val replyPostId: Int,
-                    @JsonProperty("friends_only") val friendsOnly: Int,
+                    @JsonProperty("friends_only") val friendsOnly: Boolean = false,
                     @JsonProperty("comments") val comments: Comments,
                     @JsonProperty("likes") val likes: Likes,
                     @JsonProperty("reposts") val reposts: Reposts,
-                    @JsonProperty("Views") val views: Views,
+                    @JsonProperty("views") val views: Views,
                     @JsonProperty("post_type") val postType: PostType,
-                    @JsonProperty("post_source") val postSource:  PostSource?,
-                    @JsonProperty("attachements") val attachments: List<Attachements>,
-                    @JsonProperty("geo") val geo:  Geo,
-                    @JsonProperty("signer_id") val signerId:  Int,
-                    @JsonProperty("copy_history") val copyHistory: List<WallPost>?,
-                    @JsonProperty("can_pin") val canPin:  Boolean,
-                    @JsonProperty("can_delete") val canDelete:  Boolean,
-                    @JsonProperty("can_edit") val canEdit:  Boolean,
-                    @JsonProperty("is_pinned") val isPinned:  Boolean,
-                    @JsonProperty("marked_as_ads") val isAds:  Boolean) {
+                    @JsonProperty("post_source") val postSource: PostSource? = null,
+                    @JsonProperty("attachements") val attachments: List<Attachement>,
+                    @JsonProperty("geo") val geo: Geo,
+                    @JsonProperty("signer_id") val signerId: Int,
+                    @JsonProperty("copy_history") val copyHistory: List<WallPost>? = null,
+                    @JsonProperty("can_pin") val canPin: Boolean,
+                    @JsonProperty("can_delete") val canDelete: Boolean,
+                    @JsonProperty("can_edit") val canEdit: Boolean,
+                    @JsonProperty("is_pinned") val isPinned: Boolean = false,
+                    @JsonProperty("marked_as_ads") val isAds: Boolean) {
 
 
     data class Comments(@JsonProperty("count") val count: Int,
@@ -96,5 +95,24 @@ data class WallPost(@JsonProperty("id") val id: Int,
         }
     }
 
+    data class Geo(@JsonProperty("type") val type: String,
+                   @JsonProperty("coordinates") val coordinates: String,
+                   @JsonProperty("place") val place: Place) {
+
+        data class Place(@JsonProperty("id") val id: Int,
+                         @JsonProperty("title") val title: String,
+                         @JsonProperty("latitude") val latitude: Int,
+                         @JsonProperty("longitude") val longitude: Int,
+                         @JsonProperty("created") val created: Int,
+                         @JsonProperty("icon") val icon: String,
+                         @JsonProperty("country") val country: String,
+                         @JsonProperty("city") val city: String,
+                         @JsonProperty("type") val type: Int?,
+                         @JsonProperty("group_id") val groupId: Int?,
+                         @JsonProperty("group_photo") val groupPhoto: String?,
+                         @JsonProperty("checkins") val checkins: Int?,
+                         @JsonProperty("updated") val updated: Int?,
+                         @JsonProperty("address") val address: Int?)
+    }
 
 }
