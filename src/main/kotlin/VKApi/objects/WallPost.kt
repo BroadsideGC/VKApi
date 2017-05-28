@@ -1,4 +1,5 @@
-import VKApi.model.media.Attachment
+import VKApi.objects.Likes
+import VKApi.objects.media.Attachment
 import com.fasterxml.jackson.annotation.JsonProperty
 
 
@@ -33,10 +34,6 @@ data class WallPost(@JsonProperty("id") val id: Int,
     data class Comments(@JsonProperty("count") val count: Int,
                         @JsonProperty("can_post") val can_post: Boolean)
 
-    data class Likes(@JsonProperty("count") val count: Int,
-                     @JsonProperty("user_likes") val userLikes: Boolean,
-                     @JsonProperty("can_like") val canLike: Boolean,
-                     @JsonProperty("can_puplish") val canPublish: Boolean)
 
     data class Reposts(@JsonProperty("count") val count: Int,
                        @JsonProperty("user_reposted") val userReposted: Boolean)

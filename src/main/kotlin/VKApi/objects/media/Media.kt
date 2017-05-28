@@ -1,4 +1,4 @@
-package VKApi.model.media
+package VKApi.objects.media
 
 
 /**

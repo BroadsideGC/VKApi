@@ -1,4 +1,4 @@
-package VKApi.model.media
+package VKApi.objects.media
 
 /**
  * Created by bigz on 22.05.17.

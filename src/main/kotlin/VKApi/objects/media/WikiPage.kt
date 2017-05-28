@@ -1,4 +1,4 @@
-package VKApi.model.media
+package VKApi.objects.media
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
@@ -12,8 +12,8 @@ data class WikiPage(@JsonProperty("id") val id: Int,
                     @JsonProperty("title") val title: String,
                     @JsonProperty("current_user_can_edit") val currentUserCanEdit: Boolean,
                     @JsonProperty("current_user_can_edit_access") val currentUserCanEditAccess: Boolean,
-                    @JsonProperty("whoe_can_view") val whoCanView: Int,
-                    @JsonProperty("whoe_can_edit") val whoCanEdit: Int,
+                    @JsonProperty("who_can_view") val whoCanView: Int,
+                    @JsonProperty("who_can_edit") val whoCanEdit: Int,
                     @JsonProperty("edited") val edited: Int,
                     @JsonProperty("created") val created: Int,
                     @JsonProperty("editor_id") val editorId: Int,
